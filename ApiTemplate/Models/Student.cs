@@ -19,6 +19,6 @@
         public string LastName { get; set; }
 
         [JsonProperty("enrollments")]
-        public IEnumerable<Enrollment> Enrollments { get; set; }
+        public ICollection<Enrollment> Enrollments { get; set; }
     }
 }

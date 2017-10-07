@@ -9,5 +9,7 @@
         Task<IEnumerable<Student>> GetStudents();
 
         Task<Student> GetStudent(int id);
+
+        Task<int?> AddStudent(Student student);
     }
 }

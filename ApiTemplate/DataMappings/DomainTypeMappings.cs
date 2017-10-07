@@ -9,8 +9,7 @@
         {
             return new DbStudent
             {
-                Id = student.Id
-                ,LastName = student.LastName
+                LastName = student.LastName
                 ,FirstMidName = student.FirstMidName
                 ,EnrollmentDate = student.EnrollmentDate
                 //,Enrollment = student.Enrollment // todo map Enrollment to DbType

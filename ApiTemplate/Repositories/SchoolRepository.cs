@@ -6,6 +6,7 @@
     using ApiTemplate.Models;
     using ApiTemplate.ContosoUniversity.DAL;
     using System.Linq;
+    using System.Security.Policy;
 
     public class SchoolRepository : ISchoolRepository
     {
@@ -26,6 +27,11 @@
         {
             var dbStudents = await this.repository.GetStudents();
             return dbStudents?.Select(s => s.MapToDomainType());
+        }
+
+        public async Task<int?> AddStudent(Student student)
+        {
+            return await this.repository.AddStudent(student.MapToDbType());
         }
     }
 }

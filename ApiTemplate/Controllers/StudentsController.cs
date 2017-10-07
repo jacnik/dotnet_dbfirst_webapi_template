@@ -1,5 +1,6 @@
 ﻿namespace ApiTemplate.Controllers
 {
+    using ApiTemplate.Models;
     using ApiTemplate.Repositories;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
@@ -34,6 +35,21 @@
             }
 
             return Ok(student);
+        }
+
+        // POST api/students
+        [HttpPost]
+        public async Task<IActionResult> AddStudent([FromBody] Student student)
+        {
+            var addedStudentId = await this.repository.AddStudent(student);
+            if (addedStudentId == null)
+            {
+                return NoContent();
+            }
+
+            // Returns api/students/9
+            var res = Url.Action("GetStudent", new { id = addedStudentId }).ToLowerInvariant();
+            return Ok(res);
         }
     }
 }

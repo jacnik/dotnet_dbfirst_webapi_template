@@ -34,5 +34,16 @@
 
             return student;
         }
+
+        public async Task<int?> AddStudent(Student student)
+        {
+            var updatedStudent = await this.context.Student.AddAsync(student);
+            var res = await this.context.SaveChangesAsync();
+            if (res == 0)
+            {
+                return null;
+            }
+            return updatedStudent.Entity.Id;
+        }
     }
 }
