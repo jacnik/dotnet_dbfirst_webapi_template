@@ -10,15 +10,7 @@ namespace ApiTemplate.ContosoUniversity.DAL.Models
         public virtual DbSet<Enrollment> Enrollment { get; set; }
         public virtual DbSet<Student> Student { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                // See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                // todo inject options bulder or connection string somehow
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ContosoUniversity1;Trusted_Connection=True;MultipleActiveResultSets=true");
-            }
-        }
+        public SchoolContext(DbContextOptions<SchoolContext> options) : base(options) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

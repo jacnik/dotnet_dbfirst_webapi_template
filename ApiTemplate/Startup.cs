@@ -27,7 +27,9 @@ namespace ApiTemplate
             /*
              * Register types from this solution
              */
-            services.AddContosoUniversity();
+            // See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+            var connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddContosoUniversity(connection);
             services.AddTransient<ISchoolRepository, ContosoRepository>();
 
             /*
