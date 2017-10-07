@@ -30,7 +30,7 @@
                 .Include(s => s.Enrollment)
                     .ThenInclude(e => e.Course)
                 .AsNoTracking()
-                .SingleOrDefaultAsync(m => m.Id == id);
+                .SingleOrDefaultAsync(s => s.Id == id);
 
             return student;
         }
@@ -44,6 +44,28 @@
                 return null;
             }
             return updatedStudent.Entity.Id;
+        }
+
+        public async Task<bool> DeleteStudent(int id)
+        {
+            var student = await this.context.Student
+                .AsNoTracking()
+                .SingleOrDefaultAsync(s => s.Id == id);
+
+            if (student == null)
+            {
+                return false;
+            }
+
+            this.context.Student.Remove(student);
+            var res = await this.context.SaveChangesAsync();
+
+            if (res == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

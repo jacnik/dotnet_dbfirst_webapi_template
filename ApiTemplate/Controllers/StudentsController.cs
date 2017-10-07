@@ -24,7 +24,7 @@
         }
         
         // GET api/students
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetStudent(int id)
         {
             var student = await this.repository.GetStudent(id);
@@ -44,12 +44,26 @@
             var addedStudentId = await this.repository.AddStudent(student);
             if (addedStudentId == null)
             {
-                return NoContent();
+                return BadRequest();
             }
 
             // Returns api/students/9
             var res = Url.Action("GetStudent", new { id = addedStudentId }).ToLowerInvariant();
             return Ok(res);
+        }
+
+        // DELETE api/students/10
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteStudent(int id)
+        {
+            var res = await this.repository.DeleteStudent(id);
+
+            if (res)
+            {
+                return NoContent();
+            }
+
+            return BadRequest();
         }
     }
 }
