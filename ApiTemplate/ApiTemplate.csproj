@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiTemplate.ContosoUniversity.DAL\ApiTemplate.ContosoUniversity.DAL.csproj" />
-    <ProjectReference Include="..\ApiTemplate.SchoolModel\ApiTemplate.SchoolModel.csproj" />
   </ItemGroup>
 
   <ItemGroup>

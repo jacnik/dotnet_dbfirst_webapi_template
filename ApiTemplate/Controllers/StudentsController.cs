@@ -1,6 +1,5 @@
 ﻿namespace ApiTemplate.Controllers
 {
-    using ApiTemplate.SchoolModel;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
 

@@ -1,6 +1,6 @@
-﻿namespace ApiTemplate.SchoolModel
+﻿namespace ApiTemplate
 {
-    using ApiTemplate.SchoolModel.Models;
+    using ApiTemplate.Models;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 

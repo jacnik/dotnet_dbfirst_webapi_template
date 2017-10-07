@@ -1,4 +1,4 @@
-﻿namespace ApiTemplate.SchoolModel.DataMappings
+﻿namespace ApiTemplate.DataMappings
 {
     using DomainStudent = Models.Student;
     using DbStudent = ContosoUniversity.DAL.Models.Student;

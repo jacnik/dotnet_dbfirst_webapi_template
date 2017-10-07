@@ -1,9 +1,9 @@
-﻿namespace ApiTemplate.SchoolModel
+﻿namespace ApiTemplate
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using ApiTemplate.SchoolModel.DataMappings;
-    using ApiTemplate.SchoolModel.Models;
+    using ApiTemplate.DataMappings;
+    using ApiTemplate.Models;
     using ApiTemplate.ContosoUniversity.DAL;
     using System.Linq;
 
