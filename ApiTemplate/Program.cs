@@ -12,6 +12,11 @@ namespace ApiTemplate
 {
     public class Program
     {
+        /*
+         * Helpful links:
+         * https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro
+         * https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
+         */
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
