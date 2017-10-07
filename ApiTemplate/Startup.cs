@@ -1,6 +1,7 @@
 ﻿namespace ApiTemplate
 {
     using ApiTemplate.ContosoUniversity.DAL;
+    using ApiTemplate.Repositories;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
