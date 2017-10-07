@@ -1,4 +1,4 @@
-﻿namespace ApiTemplate.SchoolModel
+﻿namespace ApiTemplate.SchoolModel.Models
 {
     public enum Grade
     {

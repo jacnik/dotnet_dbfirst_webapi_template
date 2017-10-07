@@ -1,5 +1,6 @@
 ﻿namespace ApiTemplate.SchoolModel
 {
+    using ApiTemplate.SchoolModel.Models;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
