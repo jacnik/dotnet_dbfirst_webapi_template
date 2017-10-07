@@ -1,12 +1,9 @@
-﻿using ApiTemplate.ContosoUniversity.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ApiTemplate.ContosoUniversity.DAL
+﻿namespace ApiTemplate.ContosoUniversity.DAL
 {
+    using ApiTemplate.ContosoUniversity.DAL.Models;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public interface ISchoolRepository
     {
         Task<IEnumerable<Student>> GetStudents();

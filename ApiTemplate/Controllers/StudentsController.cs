@@ -1,12 +1,9 @@
-﻿using ApiTemplate.ContosoUniversity.DAL;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ApiTemplate.Controllers
+﻿namespace ApiTemplate.Controllers
 {
+    using ApiTemplate.ContosoUniversity.DAL;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
+
     [Route("api/[controller]")]
     public class StudentsController : Controller
     {

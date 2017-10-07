@@ -1,11 +1,10 @@
-﻿using ApiTemplate.ContosoUniversity.DAL.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace ApiTemplate.ContosoUniversity.DAL
+﻿namespace ApiTemplate.ContosoUniversity.DAL
 {
+    using ApiTemplate.ContosoUniversity.DAL.Models;
+    using Microsoft.EntityFrameworkCore;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public class ContosoRepository : ISchoolRepository
     {
         /*
