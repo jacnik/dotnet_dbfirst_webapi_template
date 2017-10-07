@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiTemplate.ContosoUniversity.DAL
 {
-    public class ContosoRepository
+    public class ContosoRepository : ISchoolRepository
     {
         /*
          * Models folder was generated using the following command:
@@ -25,7 +25,7 @@ namespace ApiTemplate.ContosoUniversity.DAL
             return await this.context.Student.ToListAsync();
         }
 
-        public async Task<Student> Details(int id)
+        public async Task<Student> GetStudent(int id)
         {
             var student = await this.context.Student
                 .Include(s => s.Enrollment)

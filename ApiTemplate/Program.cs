@@ -16,6 +16,7 @@ namespace ApiTemplate
          * Helpful links:
          * https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro
          * https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
+         * https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/dependency-injection
          */
         public static void Main(string[] args)
         {
