@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    public class ContosoRepository : ISchoolRepository
+    public class ContosoRepository
     {
         /*
          * Models folder was generated using the following command:

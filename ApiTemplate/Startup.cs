@@ -1,6 +1,7 @@
 ﻿namespace ApiTemplate
 {
     using ApiTemplate.ContosoUniversity.DAL;
+    using ApiTemplate.SchoolModel;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
@@ -24,7 +25,7 @@
             // See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddContosoUniversity(connection);
-            services.AddTransient<ISchoolRepository, ContosoRepository>();
+            services.AddTransient<ISchoolRepository, SchoolRepository>();
 
             /*
              * Register general services

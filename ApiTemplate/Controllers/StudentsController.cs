@@ -1,6 +1,6 @@
 ﻿namespace ApiTemplate.Controllers
 {
-    using ApiTemplate.ContosoUniversity.DAL;
+    using ApiTemplate.SchoolModel;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
 
