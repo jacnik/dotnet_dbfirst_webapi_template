@@ -2,6 +2,9 @@
 {
     using DomainStudent = Models.Student;
     using DbStudent = ContosoUniversity.DAL.Models.Student;
+    using DomainEnrollment = Models.Enrollment;
+    using DbEnrollment = ContosoUniversity.DAL.Models.Enrollment;
+    using System.Linq;
 
     internal static class DbTypeMappings
     {
@@ -13,7 +16,19 @@
                 ,LastName = student.LastName
                 ,FirstMidName = student.FirstMidName
                 ,EnrollmentDate = student.EnrollmentDate
-                //,Enrollment = student.Enrollment // todo map Enrollment to DbType
+                ,Enrollments = student.Enrollment.Select(e => e.MapToDomainType())
+            };
+        }
+
+        internal static DomainEnrollment MapToDomainType(this DbEnrollment enrollment)
+        {
+            return new DomainEnrollment
+            {
+                EnrollmentId = enrollment.EnrollmentId
+                ,CourseId = enrollment.CourseId
+                //,Course = enrollment.Course
+                //,Grade = Models.Grade
+                ,StudentId = enrollment.StudentId
             };
         }
     }
