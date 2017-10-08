@@ -26,28 +26,16 @@
             /*
              * Register types from this solution
              */
-
-            /*
-            var connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddContosoUniversity(connection);
-            */
             services.AddTransient<ContosoRepository>()
                     .AddDbContext<SchoolContext>(options => options.UseInMemoryDatabase("TestContosoDatabase")); ;
-
-            services.AddTransient<StudentsController>();
-            services.AddTransient<ValuesController>();
             services.AddTransient<ISchoolRepository, SchoolRepository>();
 
             /*
              * Register general services
              */
-            var t = new AssemblyName("ApiTemplate");
-
-            var r = Assembly.Load(t);
-
             services
                 .AddMvc()
-                //.AddApplicationPart(Assembly.Load(new AssemblyName("ApiTemplate.Controllers")))
+                // this is explained here: https://stackoverflow.com/a/43669661
                 .AddApplicationPart(Assembly.Load(new AssemblyName("ApiTemplate")))
                 .AddJsonOptions(x =>
                 {

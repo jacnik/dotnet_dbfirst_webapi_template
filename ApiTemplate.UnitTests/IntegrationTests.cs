@@ -19,28 +19,16 @@
             // Arrange
             this.server = new TestServer(new WebHostBuilder()
                 .UseStartup<TestStartup>()
-                .UseContentRoot(AppDomain.CurrentDomain.BaseDirectory));
-                //.UseEnvironment("IntegrationTest"));
-
-            //var hostBuilder = new WebHostBuilder()
-            //    .Configure(app =>
-            //    {
-            //        app.Run(async context =>
-            //        {
-            //            await context.Response.WriteAsync("Test response");
-            //        });
-            //    });
-
-            //this.server = new TestServer(hostBuilder);
+                .UseContentRoot(AppDomain.CurrentDomain.BaseDirectory)
+                .UseEnvironment("IntegrationTest"));
 
             this.client = this.server.CreateClient();
-            this.client.BaseAddress = new Uri("http://localhost:5000");
         }
 
         [Fact]
         public async void Resopnds_With_Empty_Body_When_Db_Is_Empty()
         {
-            var response = await this.client.GetAsync("/api/values");
+            var response = await this.client.GetAsync("/api/students");
 
             var content = await response.Content.ReadAsStringAsync();
 
