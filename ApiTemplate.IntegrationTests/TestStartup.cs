@@ -1,8 +1,7 @@
-﻿namespace ApiTemplate.UnitTests
+﻿namespace ApiTemplate.IntegrationTests
 {
     using ApiTemplate.ContosoUniversity.DAL;
     using ApiTemplate.ContosoUniversity.DAL.Models;
-    using ApiTemplate.Controllers;
     using ApiTemplate.Repositories;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;

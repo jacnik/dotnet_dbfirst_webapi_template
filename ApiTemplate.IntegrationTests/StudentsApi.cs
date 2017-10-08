@@ -1,4 +1,4 @@
-﻿namespace ApiTemplate.UnitTests
+﻿namespace ApiTemplate.IntegrationTests
 {
     using ApiTemplate.Models;
     using Microsoft.AspNetCore.Hosting;
@@ -9,12 +9,12 @@
     using System.Net.Http;
     using Xunit;
 
-    public class IntegrationTests
+    public class StudentsApi
     {
         private readonly TestServer server;
         private readonly HttpClient client;
 
-        public IntegrationTests()
+        public StudentsApi()
         {
             // Arrange
             this.server = new TestServer(new WebHostBuilder()
