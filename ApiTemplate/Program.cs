@@ -24,7 +24,7 @@
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseContentRoot(AppDomain.CurrentDomain.BaseDirectory)
+                //.UseContentRoot(AppDomain.CurrentDomain.BaseDirectory)
                 .UseStartup<Startup>()
                 .Build();
     }
