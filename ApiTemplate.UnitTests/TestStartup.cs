@@ -35,7 +35,11 @@
              */
             services
                 .AddMvc()
-                // this is explained here: https://stackoverflow.com/a/43669661
+                /*
+                 *  this is explained here: 
+                 *  https://stackoverflow.com/a/43669661
+                 *  https://github.com/aspnet/Mvc/issues/5992
+                 */
                 .AddApplicationPart(Assembly.Load(new AssemblyName("ApiTemplate")))
                 .AddJsonOptions(x =>
                 {
