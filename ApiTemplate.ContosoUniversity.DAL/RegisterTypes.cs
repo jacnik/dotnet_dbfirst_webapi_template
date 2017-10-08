@@ -7,8 +7,10 @@
     public static class RegisterTypes
     {
         public static IServiceCollection AddContosoUniversity(this IServiceCollection services, string connection)
-            => services.AddTransient<ContosoRepository>()
-                .AddDbContext<SchoolContext>(options =>
-                    options.UseSqlServer(connection));
+        {
+            return services.AddTransient<ContosoRepository>()
+                           .AddDbContext<SchoolContext>(options =>
+                               options.UseSqlServer(connection));
+        }
     }
 }
