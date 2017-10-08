@@ -59,5 +59,29 @@
             var resourceUri = new Uri(client.BaseAddress, content);
             Assert.NotNull(resourceUri);
         }
+
+        [Fact]
+        public async void Persists_Posted_Resource()
+        {
+            // Arrange
+            var postStudent = new Student() { FirstMidName = "Jack", LastName = "Mistrz", EnrollmentDate = new DateTime(2002, 09, 01) };
+
+            // Act
+            var postResponse = await this.client.PostAsJsonAsync("/api/students", postStudent);
+            postResponse.EnsureSuccessStatusCode();
+            var postContent = await postResponse.Content.ReadAsStringAsync();
+            var resourceUri = new Uri(client.BaseAddress, postContent);
+
+            var getResponse = await this.client.GetAsync(resourceUri);
+            getResponse.EnsureSuccessStatusCode();
+
+            var getContent = await getResponse.Content.ReadAsStringAsync();
+            var getStudent = JsonConvert.DeserializeObject<Student>(getContent);
+
+            // Assert
+            Assert.Equal(getStudent.FirstMidName, postStudent.FirstMidName);
+            Assert.Equal(getStudent.LastName, postStudent.LastName);
+            Assert.Equal(getStudent.EnrollmentDate, postStudent.EnrollmentDate);
+        }
     }
 }
