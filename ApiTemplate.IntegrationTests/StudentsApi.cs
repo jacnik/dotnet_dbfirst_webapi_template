@@ -18,9 +18,9 @@
         {
             // Arrange
             this.server = new TestServer(new WebHostBuilder()
-                .UseStartup<TestStartup>()
-                .UseContentRoot(AppDomain.CurrentDomain.BaseDirectory)
-                .UseEnvironment("IntegrationTest"));
+                .UseStartup<TestStartup>());
+                //.UseContentRoot(AppDomain.CurrentDomain.BaseDirectory)
+                //.UseEnvironment("IntegrationTest"));
 
             this.client = this.server.CreateClient();
         }
