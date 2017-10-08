@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
@@ -10,9 +10,20 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="SpecFlow" Version="2.2.1" />
     <PackageReference Include="SpecFlow.xUnit" Version="2.2.1" />
-    <PackageReference Include="SpecRun.SpecFlow" Version="1.6.3" />
     <PackageReference Include="xunit" Version="2.3.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <DotNetCliToolReference Include="SpecFlow.NetCore" Version="1.0.0-rc9" />
+  </ItemGroup>
+
+  <!--<Target Name="PrecompileScript" BeforeTargets="BeforeBuild">
+    <Exec Command="dotnet SpecFlow.NetCore" />
+  </Target>-->
   
 </Project>
